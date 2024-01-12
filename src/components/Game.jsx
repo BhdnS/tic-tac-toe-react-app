@@ -1,7 +1,7 @@
-import {useState} from "react"
-import Board from "./Board.jsx"
-import Status from "./Status.jsx"
-import Moves from "./Moves.jsx"
+import { useState } from 'react'
+import Board from './Board.jsx'
+import Moves from './Moves.jsx'
+import Status from './Status.jsx'
 
 const Game = () => {
   const [history, setHistory] = useState([Array(9).fill(null)])
@@ -12,21 +12,16 @@ const Game = () => {
   const currentSquares = history[currentMove]
 
   const handlePlay = (nextSquares) => {
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares]
 
-    const nextHistory = [
-      ...history.slice(0, currentMove + 1),
-      nextSquares,
-    ];
-    
     setHistory(nextHistory)
     setCurrentMove(nextHistory.length - 1)
-
   }
 
   return (
     <>
-      <div className="game-board">
-        <Status squares={currentSquares} xIsNext={xIsNext}/>
+      <div className='game-board'>
+        <Status squares={currentSquares} xIsNext={xIsNext} />
         <Board
           setItemClick={setItemClick}
           xIsNext={xIsNext}

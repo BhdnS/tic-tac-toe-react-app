@@ -1,4 +1,4 @@
-import calculateWinner from "../utils/calculateWinner.js"
+import calculateWinner from '../utils/calculateWinner.js'
 
 const Status = ({ squares, xIsNext }) => {
   const winner = calculateWinner(squares)
@@ -6,16 +6,14 @@ const Status = ({ squares, xIsNext }) => {
 
   let status
   if (winner) {
-    status = "Winner: " + winner.winner
+    status = 'Winner: ' + winner.winner
   } else if (isBoardFull) {
     status = 'Draw'
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O")
+    status = 'Next player: ' + (xIsNext ? 'X' : 'O')
   }
 
-  return (
-    <div>{status}</div>
-  )
+  return <div>{status}</div>
 }
 
 export default Status

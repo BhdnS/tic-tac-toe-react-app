@@ -54,6 +54,7 @@ body {
   font-family: sans-serif;
   margin: 20px;
   padding: 0;
+  background-color: yellowgreen;
 }
 
 .square {
@@ -82,13 +83,25 @@ body {
 }
 .game {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-info {
-  margin-left: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .win_square {
   background-color: yellow;
+}
+
+button {
+  margin-top: 5px;
+  background-color: #999999;
+  max-width: 115px;
+  width: 100%;
+  padding: 5px;
 }

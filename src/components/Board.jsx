@@ -1,17 +1,20 @@
-import Square from "./Square.jsx"
-import calculateWinner from "../utils/calculateWinner.js"
+import calculateWinner from '../utils/calculateWinner.js'
+import Square from './Square.jsx'
 
 const Board = ({ xIsNext, squares, onPlay, setItemClick }) => {
   const winner = calculateWinner(squares)
 
   const renderSquare = (i, isWinnerSquare) => {
-    return <Square
-      value={squares[i]}
-      key={i} onSquareClick={() => handleClick(i)}
-      isWinnerSquare={isWinnerSquare}
-    />
+    return (
+      <Square
+        value={squares[i]}
+        key={i}
+        onSquareClick={() => handleClick(i)}
+        isWinnerSquare={isWinnerSquare}
+      />
+    )
   }
-  
+
   const handleClick = (i) => {
     if (calculateWinner(squares) || squares[i]) return
     const nextSquares = squares.slice()
@@ -36,16 +39,16 @@ const Board = ({ xIsNext, squares, onPlay, setItemClick }) => {
         const isWinnerSquare = winner && winner.line.includes(squaresIndex)
         squaresInRow.push(renderSquare(squaresIndex, isWinnerSquare))
       }
-      rows.push(<div className='board-row' key={row}>{squaresInRow}</div>)
+      rows.push(
+        <div className='board-row' key={row}>
+          {squaresInRow}
+        </div>
+      )
     }
     return rows
   }
 
-  return (
-    <>
-      {renderBoardRows()}
-    </>
-  )
+  return <>{renderBoardRows()}</>
 }
 
 export default Board

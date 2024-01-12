@@ -1,5 +1,5 @@
-import {useState} from "react"
-import calculateRowCol from "../utils/calculateRowCol.js"
+import { useState } from 'react'
+import calculateRowCol from '../utils/calculateRowCol.js'
 
 const Moves = ({ currentMove, history, setCurrentMove, itemClick }) => {
   const [isAscending, setIsAscending] = useState(false)
@@ -15,21 +15,19 @@ const Moves = ({ currentMove, history, setCurrentMove, itemClick }) => {
     let description
 
     if (move > 0) {
-      description = isCurrentMove ?
-        `You're on the go #${move} (row:${row} col:${col})` :
-        `Go to move #${move} (row:${row} col:${col})`
+      description = isCurrentMove
+        ? `You're on the go #${move} (row:${row} col:${col})`
+        : `Go to move #${move} (row:${row} col:${col})`
     } else {
       description = 'Go to game start'
     }
 
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>
-          {description}
-        </button>
+        <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
-    );
-  });
+    )
+  })
 
   const handleReverse = () => {
     setIsAscending(!isAscending)
@@ -39,7 +37,9 @@ const Moves = ({ currentMove, history, setCurrentMove, itemClick }) => {
 
   return (
     <div className='game-info'>
-      <button onClick={handleReverse}>{isAscending ? 'Ascending' : 'Descending'}</button>
+      <button onClick={handleReverse}>
+        Sort: {isAscending ? 'Ascending' : 'Descending'}
+      </button>
       <ol>{sortMovies}</ol>
     </div>
   )
