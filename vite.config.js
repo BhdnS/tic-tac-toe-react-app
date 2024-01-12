@@ -9,4 +9,12 @@ export default defineConfig({
       minify: true,
     }),
   ],
+  build: {
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
 })

@@ -3,30 +3,30 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "/src/images/icons-16.png",
+      "src": "./images/icons-16.png",
       "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "src": "/src/images/icons-32.png",
+      "src": "./images/icons-32.png",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "/src/images/PWA/big.png",
+      "src": "./images/PWA/big.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "screenshot": [
     {
-      "src": "/src/images/PWA/screenshot/desktop-screenshot.png",
+      "src": "./images/PWA/screenshot/desktop-screenshot.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "desktop"
     },
     {
-      "src": "/src/images/PWA/screenshot/mobile-screenshot.png",
+      "src": "./images/PWA/screenshot/mobile-screenshot.png",
       "sizes": "720x1280",
       "type": "image/png",
       "form_factor": "handset"
